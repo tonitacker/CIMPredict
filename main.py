@@ -1,8 +1,25 @@
 import os
+import sys
 from cryptography.fernet import Fernet
 
 import tkinter as tk
 from tkinter import messagebox
+
+# Funktion für die korrekte Erkennung des working directorys:
+# .exe gibt nicht den gewünschten Pfad zurück
+def get_base_path():
+    if getattr(sys, 'frozen', False):
+        # Wenn das Skript als exe ausgeführt wird
+        base_path = os.path.dirname(sys.executable)
+        base_path_exe = "True"
+    else:
+        # Wenn das Skript als .py ausgeführt wird
+        base_path = os.path.dirname(os.path.abspath(__file__))
+        base_path_exe = "False"
+    return base_path, base_path_exe
+
+
+
 
 # Entschlüsselungsfunktion für Modell und Abfrage-R-Skript
 def decrypt_file(encrypted_file_path, decrypted_file_path, cipher_suite):
@@ -88,7 +105,8 @@ def validate_inputs(*args):
         status_label.config(text="Bitte füllen Sie alle Felder aus.")
 
 ##############################################################################
-currentwd = os.getcwd()
+currentwd, base_path_exe = get_base_path()
+print(currentwd)
 dll_dir = os.path.normpath(os.path.join(currentwd, "portableR","bin", "x64"))
 
 os.add_dll_directory(dll_dir)
@@ -102,8 +120,8 @@ import rpy2.robjects as ro
 setup(currentwd)
 
 # Hauptfenster tkinter
-script_dir = os.path.dirname(__file__)
-#print(script_dir)
+
+script_dir = currentwd
 root = tk.Tk()
 root.title("CIMPredict")
 
@@ -145,7 +163,7 @@ status_label = tk.Label(root, text="", fg="red")
 status_label.grid(row=4, columnspan=2)
 
 # Label für Versionsdaten und Copyright
-version = "CIMPredict 1.1.2"
+version = "CIMPredict 1.1.3"
 copyright = "© 2024 Stryker Trauma GmbH - Stryker confidential for internal use only"
 version_label = tk.Label(root, text=version, anchor='e')
 version_label.grid(row=4, column=3, padx=10, pady=5, sticky='e')

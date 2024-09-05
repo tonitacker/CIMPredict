@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['mainv2.py'],
+    ['mainv3.py'],
     pathex=[],
     binaries=[],
     datas=[
@@ -39,5 +39,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['favicon.ico'],
+    icon = 'favicon.ico'
 )
