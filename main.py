@@ -22,31 +22,32 @@ def setup(currentwd):
     
     currentwd = os.path.normpath(os.path.join(currentwd, "R-Skripte"))
     
+    try:
     
+        # Dateipfade definieren
+        encrypted_r_script_path = os.path.join(currentwd, 'RiskAssessmentModule.encrypted')
+        decrypted_r_script_path = os.path.join(currentwd, 'RiskAssessmentModule.R')
+        encrypted_data_path = os.path.join(currentwd, 'modelCIMAge.encrypted')
+        decrypted_data_path = os.path.join(currentwd, 'modelCIMAge.RData')
     
-    # Dateipfade definieren
-    encrypted_r_script_path = os.path.join(currentwd, 'RiskAssessmentModule.encrypted')
-    decrypted_r_script_path = os.path.join(currentwd, 'RiskAssessmentModule.R')
-    encrypted_data_path = os.path.join(currentwd, 'modelCIMAge.encrypted')
-    decrypted_data_path = os.path.join(currentwd, 'modelCIMAge.RData')
-    
-    # Entschlüsseln der R-Skripte und .RData-Datei
-    decrypt_file(encrypted_r_script_path, decrypted_r_script_path, cipher_suite)
-    decrypt_file(encrypted_data_path, decrypted_data_path, cipher_suite)
+        # Entschlüsseln der R-Skripte und .RData-Datei
+        decrypt_file(encrypted_r_script_path, decrypted_r_script_path, cipher_suite)
+        decrypt_file(encrypted_data_path, decrypted_data_path, cipher_suite)
 
-    
-    ro.globalenv['currentwd_R'] = currentwd
+       
+        ro.globalenv['currentwd_R'] = currentwd
 
-    ro.r('setwd(currentwd_R)')
+        ro.r('setwd(currentwd_R)')
     
-    # Ich hol mir die Funktion ( und die Daten ) 
-    ro.r('source("RiskAssessmentModule.R")')
-
+        # Einlesen von Funktion ( und Daten ) 
+        ro.r('source("RiskAssessmentModule.R")')
+    finally:
     #Löschen der temporär entschlüsselten Dateien
-    os.remove(decrypted_r_script_path)
-    os.remove(decrypted_data_path)
-
     
+        os.remove(decrypted_r_script_path)
+        os.remove(decrypted_data_path)
+   
+        
 def calculate():
     CIM_input = float(cim_entry.get())
     Age_input = int(age_entry.get())
@@ -92,8 +93,11 @@ dll_dir = os.path.normpath(os.path.join(currentwd, "portableR","bin", "x64"))
 
 os.add_dll_directory(dll_dir)
 r_dir = os.path.normpath(os.path.join(currentwd, "portableR"))
-print(r_dir)
+#print(r_dir)
+#Setzen von lokalen Umgebungsvariablen
 os.environ['R_HOME'] = r_dir
+os.environ['R_LIBS_USER'] = os.path.normpath(os.path.join(currentwd, "portableR","library"))
+
 import rpy2.robjects as ro        
 setup(currentwd)
 
@@ -103,7 +107,7 @@ script_dir = os.path.dirname(__file__)
 root = tk.Tk()
 root.title("CIMPredict")
 
-# todo: rel. Pfad für Distribution
+# Icon einbinden
 root.iconbitmap(os.path.normpath(os.path.join(script_dir, "favicon.ico")))
 
 
@@ -141,7 +145,7 @@ status_label = tk.Label(root, text="", fg="red")
 status_label.grid(row=4, columnspan=2)
 
 # Label für Versionsdaten und Copyright
-version = "CIMPredict 1.1.1"
+version = "CIMPredict 1.1.2"
 copyright = "© 2024 Stryker Trauma GmbH - Stryker confidential for internal use only"
 version_label = tk.Label(root, text=version, anchor='e')
 version_label.grid(row=4, column=3, padx=10, pady=5, sticky='e')
