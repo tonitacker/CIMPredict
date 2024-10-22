@@ -6,7 +6,7 @@ a = Analysis(
     pathex=[],
     binaries=[],
     datas=[
-        ('favicon.ico', '.'),
+        ('fav256x256.ico', '.'),
         ('portableR', 'portableR'),
         ('R-Skripte', 'R-Skripte')
         ],
@@ -39,5 +39,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon = 'favicon.ico'
+    icon = 'fav256x256.ico'
 )

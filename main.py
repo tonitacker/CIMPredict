@@ -126,7 +126,7 @@ root = tk.Tk()
 root.title("CIMPredict")
 
 # Icon einbinden
-root.iconbitmap(os.path.normpath(os.path.join(script_dir, "favicon.ico")))
+root.iconbitmap(os.path.normpath(os.path.join(script_dir, "fav256x256.ico")))
 
 
 
