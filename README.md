@@ -26,16 +26,9 @@ Similarly, provide a valid age (between 51 and 90 years).
 The "Berechnen"-button is made accessible once all values are provided. 
 Click it to retrieve the fracture risk value.
 
-## Licensing
+## License
 
-This software is confidential and intended solely for internal use within Stryker Trauma GmbH and its affiliates. Distribution, dissemination, or publication of this software or any part of it is prohibited without explicit written permission from Stryker Trauma GmbH.
-
-### License Terms
-
-- **Usage:** This software may only be used within Stryker Trauma GmbH and is not intended for use outside the company or by third parties.
-- **Confidentiality:** All information contained in this software is confidential and must not be disclosed.
-- **Modifications:** Changes or modifications to the software may only be made by authorized personnel of Stryker Trauma GmbH.
-- **Liability:** Stryker Trauma GmbH assumes no liability for any damages that may arise from the use of this software.
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](./LICENSE) file for details.
 
 ### Contact
 
