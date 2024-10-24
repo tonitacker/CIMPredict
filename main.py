@@ -164,7 +164,7 @@ status_label.grid(row=4, columnspan=2)
 
 # Label für Versionsdaten und Copyright
 version = "CIMPredict 1.1.3"
-copyright = "© 2024 Stryker Trauma GmbH - Stryker confidential for internal use only"
+copyright = "© 2024 Anton Krackhardt, for demonstration purposes only"
 version_label = tk.Label(root, text=version, anchor='e')
 version_label.grid(row=4, column=3, padx=10, pady=5, sticky='e')
 
