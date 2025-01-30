@@ -1,0 +1,10 @@
+bibentry(bibtype   = "Book",
+         title     = "Applied Econometrics with {R}",
+         author    = c(as.person("Christian Kleiber"), as.person("Achim Zeileis")),
+         year      = "2008",
+         publisher = "Springer-Verlag",
+	 address   = "New York",
+	 note      = "{ISBN} 978-0-387-77316-2",
+	 url       = "https://CRAN.R-project.org/package=AER",
+	 header    = "To cite AER, please use:"
+)

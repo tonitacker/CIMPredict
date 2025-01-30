@@ -1,0 +1,22 @@
+basepredict             predicted value
+basepredict.glm         predicted value
+basepredict.lm          predicted value
+basepredict.lmerMod     predicted value
+basepredict.mlogit      predicted value
+basepredict.multinom    predicted value
+basepredict.polr        predicted value
+basepredict.tobit       predicted value
+basepredict.vglm        predicted value
+dc                      predicted values and discrete change
+dc.glm                  predicted values and discrete change
+dc.lm                   predicted values and discrete change
+dc.lmerMod              predicted values and discrete change
+dc.mlogit               predicted values and discrete change
+dc.multinom             predicted values and discrete change
+dc.polr                 predicted values and discrete change
+dc.tobit                predicted values and discrete change
+dc.vglm                 predicted values and discrete change
+glm.predict-package     Predicted Values and Discrete Changes for GLM
+predicts                predicted values and discrete change
+selects2015             Swiss Electoral Studies (Selects) 2015 -
+                        Post-electoral study

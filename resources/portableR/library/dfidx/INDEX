@@ -1,0 +1,7 @@
+dfidx                   Data frames with indexes
+dplyr                   Methods for dplyr verbs
+idx                     Index for dfidx
+idx_name                Get the names of the indexes
+methods.dfidx           Methods for dfidx
+model.frame.dfidx       model.frame/matrix for dfidx objects
+unfold_idx              Fold and Unfold a dfidx object
