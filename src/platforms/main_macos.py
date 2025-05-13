@@ -3,7 +3,8 @@ import sys
 from cryptography.fernet import Fernet
 
 import tkinter  as tk
-from tkinter import messagebox
+from tkinter import messagebox, PhotoImage
+
 
 # Funktion für die korrekte Erkennung des working directorys:
 # .exe gibt nicht den gewünschten Pfad zurück
@@ -150,9 +151,9 @@ root = tk.Tk()
 root.title("CIMPredict")
 
 # Icon einbinden
-root.iconbitmap(os.path.normpath(os.path.join(resource_path, "fav256x256.ico")))
-
-
+#root.iconbitmap(os.path.normpath(os.path.join(resource_path, "fav256x256.ico")))
+icon = PhotoImage(file="icon.png")
+root.iconphoto(True, icon)
 
 # StringVar-Objekte erstellen
 cim_var = tk.StringVar()

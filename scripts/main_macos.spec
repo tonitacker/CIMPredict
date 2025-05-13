@@ -1,14 +1,15 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 a = Analysis(
-    ['main.py'],
+    ['main.py']
     pathex=[],
     binaries=[],
     datas=[
-        ('icon.icns', '.'),  # Icon-Datei
-	('fav256x256.ico', '.'),
-        ('portableR', 'portableR'),
-        ('R-Skripte', 'R-Skripte')
+        ('icon.icns', '/resources/icon.icns'),  # Icon-Datei
+	('fav256x256.ico', '/resources/fav256x256.ico'),
+	('icon.png', '/resources/icon.png'),
+        ('portableR', '/resources/portableR'),
+        ('R-Skripte', '/resources/R-Skripte')
     ],
     hiddenimports=[],
     hookspath=[],
