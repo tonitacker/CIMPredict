@@ -13,7 +13,7 @@ def encrypt_file(file_path, encrypted_file_path, cipher_suite):
         file.write(encrypted_data)
 
 encrypt_file('RiskAssessmentModule.R', 'RiskAssessmentModule.encrypted', cipher_suite)
-encrypt_file('modelCIMAge.RData', 'modelCIMAge.encrypted', cipher_suite)
+encrypt_file('modelCIMAge2.RData', 'modelCIMAge.encrypted', cipher_suite)
 # Speichere den Schlüssel sicher
 with open('key.key', 'wb') as key_file:
     key_file.write(key)

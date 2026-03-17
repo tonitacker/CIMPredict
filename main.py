@@ -163,7 +163,7 @@ status_label = tk.Label(root, text="", fg="red")
 status_label.grid(row=4, columnspan=2)
 
 # Label für Versionsdaten und Copyright
-version = "CIMPredict 1.1.3"
+version = "CIMPredict 2.0.0"
 copyright = "© 2024 Anton Krackhardt, for demonstration purposes only"
 version_label = tk.Label(root, text=version, anchor='e')
 version_label.grid(row=4, column=3, padx=10, pady=5, sticky='e')
